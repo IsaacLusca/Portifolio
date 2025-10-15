@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-htlm, body,  #root, .app {
+html, body,  #root, .app {
   height: 100%;
   background-color: #010026;
   @apply text-white;
