@@ -2,6 +2,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import gatoImg from "../assets/gatocalvocria.jpg";
+import SocialMediaIcons from "../components/SocialMediaIcons";
 
 <img
   alt="profile"
@@ -18,6 +19,7 @@ const Landing = ({ setSelectedPage }) => {
             id="inicio"
             className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
         >
+            {/* IMAGEM */}
             <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
                 {isAboveMediumScreens ? (
                 <div
@@ -37,6 +39,82 @@ const Landing = ({ setSelectedPage }) => {
                     src={gatoImg}
                 />
                 )}
+            </div>
+
+            {/* INFORMAÇÕES */}
+            <div className="z-30 basis-2/5 mt-12 md:mt-32">
+                {/* NOME */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <p className="text-6xl font-playfair z-10 text-center md:text-start">
+                        Isaac{" "}
+                        <span
+                            className="xs:relative xs:text-deep-blue xs:font-semibold z-20
+                            xs:before:content-brush before:absolute before:-left-[35px]
+                            before:-top-[70px] before:z-[-1]"
+                        >
+                            Lucas
+                        </span>
+                    </p>
+                    <p className="mt-10 mb-7 text-sm text-center md:text-start">
+                        Desenvolvedor Full Stack
+                    </p>
+                </motion.div>
+
+                {/* BOTÕES */}
+                <motion.div
+                    className="flex mt-5 justify-center md:justify-start"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <AnchorLink
+                        className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
+                        hover:bg-blue hover:text-white transition duration-500"
+                        onClick={() => setSelectedPage("contato")}
+                        href="#contato"
+                    >
+                        Contate-me
+                    </AnchorLink>
+                    <AnchorLink
+                        className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+                        onClick={() => setSelectedPage("contato")}
+                        href="#contato"
+                    >
+                        <div
+                            className="bg-deep-blue hover:text-red transition duration-500 w-full h-full
+                            flex items-center justify-center px-10 font-playfair"
+                        >
+                            Vamos conversar
+                        </div>
+                    </AnchorLink>
+                </motion.div>
+                <motion.div
+                    className="flex mt-5 justify-center md:justify-start"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <SocialMediaIcons />
+                </motion.div>
             </div>
         </section>
     );
