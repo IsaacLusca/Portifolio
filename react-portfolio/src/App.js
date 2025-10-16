@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import DotGroup from "./scenes/DotGroup";
 import useMediaQuery from "./hooks/useMediaQuery";
 import NavBar from "./scenes/Navbar";
+import Landing from "./scenes/Landing";
 
 function App() {
   // Estado para armazenar a página selecionada, iniciando com "home"
-  const [selectedPage, setSelectedPage] = useState("home") ;
+  const [selectedPage, setSelectedPage] = useState("inicio") ;
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
 
@@ -34,6 +35,9 @@ function App() {
             setSelectedPage={setSelectedPage}
           />
         )}
+
+        <Landing setSelectedPage={setSelectedPage} />
+
       </div>
     </div>
   )
