@@ -16,6 +16,7 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
+        setSelectedPage("inicio");
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
@@ -24,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-deep-blue">
+    <div className="app bg-deep-blue">
       <NavBar
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
