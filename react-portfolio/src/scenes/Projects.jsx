@@ -82,11 +82,11 @@ const Projects = () => {
           <Project title="Projeto 2" projectImage={project1Image} description={"Landing page responsiva construída com Tailwind CSS e design adaptativo."} />
 
           {/* ROW 2 */}
-          {/* <Project title="Projeto 3" projectImage={project1Image} description={"Aplicativo de previsão do tempo consumindo uma API pública e exibindo dados dinamicamente."} />
+          <Project title="Projeto 3" projectImage={project1Image} description={"Aplicativo de previsão do tempo consumindo uma API pública e exibindo dados dinamicamente."} />
           <Project title="Projeto 4" projectImage={project1Image} description={"Mini e-commerce com carrinho, filtros e layout responsivo."} />
           
           <Project title="Projeto 5" projectImage={project1Image} description={"Portfólio interativo com animações criadas usando Framer Motion."} />
-          <Project title="Projeto 6" projectImage={project1Image} description={"Blog estático com posts em Markdown e rotas dinâmicas simples."} /> */}
+          <Project title="Projeto 6" projectImage={project1Image} description={"Blog estático com posts em Markdown e rotas dinâmicas simples."} />
 
             {/* <div
                 className="flex justify-center text-center items-center p-10 bg-blue
