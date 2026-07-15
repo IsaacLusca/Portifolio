@@ -1,8 +1,5 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-import project1Image from "../assets/project-1.jpeg";
-// import project2Image from "../assets/project-2.jpeg";
-// import project3Image from "../assets/project-3.jpeg";
 
 const container = {
   hidden: {},
@@ -18,7 +15,7 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title, projectImage, description }) => {
+const Project = ({ title }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
@@ -27,16 +24,18 @@ const Project = ({ title, projectImage, description }) => {
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">{description ?? "Descrição do projeto."}</p>
+        <p className="mt-7">
+          Descrição do projeto em breve.
+        </p>
       </div>
-        <img src={projectImage} alt={projectTitle} />    
+      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
     </motion.div>
   );
 };
 
 const Projects = () => {
   return (
-    <section id="projetos" className="pt-48 pb-48" >
+    <section id="projetos" className="pt-48 pb-48">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"
@@ -45,7 +44,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
-            hidden: { opacity: 0, y: -50 },
+          hidden: { opacity: 0, y: -50 },
           visible: { opacity: 1, y: 0 },
         }}
       >
@@ -58,7 +57,7 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          lista de projetos.
+          Projetos desenvolvidos ao longo da minha jornada como desenvolvedor.
         </p>
       </motion.div>
 
@@ -71,30 +70,30 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-        {/* <div
-            className="flex justify-center text-center items-center p-10 bg-blue
-            max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-        >
-            teste
-        </div> */}
-
-          <Project title="Projeto 1" projectImage={project1Image} description={"Aplicação de gerenciamento de tarefas com React e armazenamento local (localStorage)."} />
-          <Project title="Projeto 2" projectImage={project1Image} description={"Landing page responsiva construída com Tailwind CSS e design adaptativo."} />
+          {/* ROW 1 */}
+          <div
+            className="flex justify-center text-center items-center p-10 bg-red
+              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
+          >
+            INTERFACES BONITAS
+          </div>
+          <Project title="Project 1" />
+          <Project title="Project 2" />
 
           {/* ROW 2 */}
-          <Project title="Projeto 3" projectImage={project1Image} description={"Aplicativo de previsão do tempo consumindo uma API pública e exibindo dados dinamicamente."} />
-          <Project title="Projeto 4" projectImage={project1Image} description={"Mini e-commerce com carrinho, filtros e layout responsivo."} />
-          
-          <Project title="Projeto 5" projectImage={project1Image} description={"Portfólio interativo com animações criadas usando Framer Motion."} />
-          <Project title="Projeto 6" projectImage={project1Image} description={"Blog estático com posts em Markdown e rotas dinâmicas simples."} />
+          <Project title="Project 3" />
+          <Project title="Project 4" />
+          <Project title="Project 5" />
 
-            {/* <div
-                className="flex justify-center text-center items-center p-10 bg-blue
-                max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-            >
-                teste
-            </div> */}
-
+          {/* ROW 3 */}
+          <Project title="Project 6" />
+          <Project title="Project 7" />
+          <div
+            className="flex justify-center text-center items-center p-10 bg-blue
+              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
+          >
+            EXPERIÊNCIA FLUIDA
+          </div>
         </motion.div>
       </div>
     </section>

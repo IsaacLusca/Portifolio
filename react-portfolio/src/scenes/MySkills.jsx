@@ -1,7 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
-import skills from "../assets/skills.jpeg";
+import skillsImage from "../assets/skills-image.png";
 
 const MySkills = () => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -38,14 +38,14 @@ const MySkills = () => {
                             <img
                             alt="skills"
                             className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
-                            src={skills}
+                            src={skillsImage}
                             />
                         </div>
                         ) : (
                         <img
                             alt="profile"
                             className="z-10 w-full max-w-[400px] md:max-w-[600px]"
-                            src={skills}
+                            src={skillsImage}
                         />
                     )}
                 </div>
