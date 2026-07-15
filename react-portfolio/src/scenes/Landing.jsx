@@ -1,15 +1,8 @@
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import gatoImg from "../assets/gatocalvocria.jpg";
+import profileImage from "../assets/profile-image.png";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-
-<img
-  alt="profile"
-  className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
-  src={gatoImg}
-/>
-
 
 const Landing = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -29,14 +22,14 @@ const Landing = ({ setSelectedPage }) => {
                         <img
                         alt="profile"
                         className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-[400px]"
-                        src={gatoImg}
+                        src={profileImage}
                         />
                     </div>
                     ) : (
                     <img
                         alt="profile"
                         className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-[400px]"
-                        src={gatoImg}
+                        src={profileImage}
                     />
                 )}
             </div>
@@ -58,7 +51,7 @@ const Landing = ({ setSelectedPage }) => {
                         Isaac{" "}
                         <span
                             className="xs:relative xs:text-deep-blue xs:font-semibold z-20
-                            xs:before:content-brush before:absolute before:-left-[35px]
+                            xs:before:content-brush before:absolute before:-left-[25px]
                             before:-top-[70px] before:z-[-1]"
                         >
                             Lucas
