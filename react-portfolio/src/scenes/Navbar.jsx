@@ -1,8 +1,6 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
-import menuIcon from '../assets/menu-icon.svg';
-import closeIcon from '../assets/close-icon.svg';
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
@@ -48,6 +46,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               setSelectedPage={setSelectedPage}
             />
             <Link
+              page="Depoimentos"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
               page="Contato"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
@@ -58,7 +61,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             className="rounded-full bg-red p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
-            <img src={menuIcon} alt="menu-icon" />
+            <img src="../assets/menu-icon.svg" alt="menu-icon" />
           </button>
         )}
 
@@ -68,7 +71,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             {/* CLOSE ICON */}
             <div className="flex justify-end p-12">
               <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                <img src={closeIcon} alt="close-icon" />
+                <img src="../assets/close-icon.svg" alt="close-icon" />
               </button>
             </div>
 
@@ -86,6 +89,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               />
               <Link
                 page="Projetos"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Depoimentos"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
