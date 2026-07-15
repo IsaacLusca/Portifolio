@@ -1,6 +1,6 @@
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
-import profileImage from "../assets/profile-image.png";
+import profileImage from "../assets/gatocalvocria.jpg";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Landing = ({ setSelectedPage }) => {
