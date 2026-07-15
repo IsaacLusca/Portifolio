@@ -15,20 +15,20 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ({ title, description, githubUrl }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
     <motion.div variants={projectVariant} className="relative">
-      <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">
-          Descrição do projeto em breve.
-        </p>
-      </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      <a href={githubUrl} target="_blank" rel="noreferrer" className="block">
+        <div className={overlayStyles}>
+          <p className="text-2xl font-playfair">{title}</p>
+          <p className="mt-7">{description}</p>
+        </div>
+        <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      </a>
     </motion.div>
   );
 };
@@ -77,17 +77,43 @@ const Projects = () => {
           >
             INTERFACES BONITAS
           </div>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
+          <Project
+            title="Easycar Api V2"
+            description="API REST para sistema de locação de veículos com autenticação e CRUD completo."
+            githubUrl="https://github.com/IsaacLusca/easycar-api-v2"
+          />
+          <Project
+            title="PDF Translate"
+            description="Tradutor de arquivos PDF mantendo a formatação original do documento."
+            githubUrl="https://github.com/IsaacLusca/PDFTranslate"
+          />
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
+          <Project
+            title="GerenTAR"
+            description="Gerenciador de tarefas com interface limpa e armazenamento local."
+            githubUrl="https://github.com/IsaacLusca/GerenTAR"
+          />
+          <Project
+            title="DashMERN"
+            description="Dashboard full stack com MERN (MongoDB, Express, React, Node) — em desenvolvimento."
+            githubUrl="https://github.com/IsaacLusca"
+          />
+          <Project
+            title="Termo"
+            description="Jogo de adivinhação de palavras inspirado no Termo/Wordle."
+            githubUrl="https://github.com/IsaacLusca/Termo-"
+          />
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          <Project
+            title="Projeto Privado"
+            description="Sistema profissional de grande porte. Código privado, disponível sob consulta."
+          />
+          <Project
+            title="Em Breve"
+            description="Novo projeto sendo desenvolvido em breve."
+          />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
