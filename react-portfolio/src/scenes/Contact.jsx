@@ -17,7 +17,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="contact py-48">
+    <section id="contato" className="contact py-48 scroll-mt-20">
       <motion.div
         initial="hidden"
         whileInView="visible"

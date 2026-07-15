@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Testimonials = () => {
   return (
-    <section id="depoimentos" className="pt-32 pb-16">
+    <section id="depoimentos" className="pt-32 pb-16 scroll-mt-20">
       <motion.div
         className="md:w-1/3 text-center md:text-left"
         initial="hidden"

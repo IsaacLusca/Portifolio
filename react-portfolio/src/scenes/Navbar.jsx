@@ -1,11 +1,10 @@
 import { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
   return (
-    <AnchorLink
+    <a
       className={`${
         selectedPage === lowerCasePage ? "text-yellow" : ""
       } hover:text-yellow transition duration-500`}
@@ -13,7 +12,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
       onClick={() => setSelectedPage(lowerCasePage)}
     >
       {page}
-    </AnchorLink>
+    </a>
   );
 };
 

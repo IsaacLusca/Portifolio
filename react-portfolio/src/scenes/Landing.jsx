@@ -1,6 +1,5 @@
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import profileImage from "../assets/profile-image.png";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
@@ -10,7 +9,7 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section
             id="inicio"
-            className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
+            className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10 scroll-mt-20"
         >
             {/* IMAGEM */}
             <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
@@ -74,15 +73,15 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 },
                     }}
                 >
-                    <AnchorLink
+                    <a
                         className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
                         hover:bg-blue hover:text-white transition duration-500"
                         onClick={() => setSelectedPage("contato")}
                         href="#contato"
                     >
                         Contate-me
-                    </AnchorLink>
-                    <AnchorLink
+                    </a>
+                    <a
                         className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
                         onClick={() => setSelectedPage("contato")}
                         href="#contato"
@@ -93,7 +92,7 @@ const Landing = ({ setSelectedPage }) => {
                         >
                             Vamos conversar
                         </div>
-                    </AnchorLink>
+                    </a>
                 </motion.div>
                 <motion.div
                     className="flex mt-5 justify-center md:justify-start"
