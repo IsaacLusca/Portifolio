@@ -8,6 +8,7 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
     <div className="flex flex-col gap-6 fixed top-[60%] right-7">
       <a
         href="#inicio"
+        aria-label="inicio"
         className={`${
           selectedPage === "inicio" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
@@ -15,7 +16,8 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
       />
 
       <a
-    href="#habilidades"
+        href="#habilidades"
+        aria-label="habilidades"
         className={`${
           selectedPage === "habilidades" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
@@ -24,6 +26,7 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
 
       <a
         href="#projetos"
+        aria-label="projetos"
         className={`${
           selectedPage === "projetos" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
@@ -32,6 +35,7 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
 
       <a
         href="#depoimentos"
+        aria-label="depoimentos"
         className={`${
           selectedPage === "depoimentos" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
@@ -40,11 +44,12 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
 
       <a
         href="#contato"
+        aria-label="contato"
         className={`${
           selectedPage === "contato" ? selectedStyles : "bg-dark-grey"
         } w-3 h-3 rounded-full`}
         onClick={() => setSelectedPage("contato")}
-      </a>
+      />
     </div>
   );
 };
