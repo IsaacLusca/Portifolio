@@ -34,15 +34,6 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
       />
 
       <a
-        href="#depoimentos"
-        aria-label="depoimentos"
-        className={`${
-          selectedPage === "depoimentos" ? selectedStyles : "bg-dark-grey"
-        } w-3 h-3 rounded-full`}
-        onClick={() => setSelectedPage("depoimentos")}
-      />
-
-      <a
         href="#contato"
         aria-label="contato"
         className={`${
