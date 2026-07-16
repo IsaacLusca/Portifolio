@@ -1,5 +1,9 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import easycar from "../assets/projectImages/easycar.png";
+import pdfTranslate from "../assets/projectImages/PDFTranslate.png";
+import gerenTAR from "../assets/projectImages/gerenTAR.png";
+import termo from "../assets/projectImages/termo.png";
 
 const container = {
   hidden: {},
@@ -15,19 +19,20 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title, description, githubUrl }) => {
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
+const Project = ({ title, description, githubUrl, image }) => {
+  const overlayStyles = `absolute h-full w-full flex flex-col justify-center items-center text-center p-16 text-deep-blue transition duration-500 ${
+    image ? "opacity-0 hover:opacity-90 bg-grey" : "opacity-100 bg-grey"
+  }`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
-    <motion.div variants={projectVariant} className="relative">
-      <a href={githubUrl} target="_blank" rel="noreferrer" className="block">
+    <motion.div variants={projectVariant} className="relative max-w-[400px] max-h-[400px] bg-opaque-black overflow-hidden">
+      <a href={githubUrl} target="_blank" rel="noreferrer" className="block w-full h-full">
         <div className={overlayStyles}>
           <p className="text-2xl font-playfair">{title}</p>
           <p className="mt-7">{description}</p>
         </div>
-        <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+        {image && <img src={image} alt={projectTitle} className="w-full h-full object-fill" />}
       </a>
     </motion.div>
   );
@@ -81,11 +86,13 @@ const Projects = () => {
             title="Easycar Api V2"
             description="API REST para sistema de locação de veículos com autenticação e CRUD completo."
             githubUrl="https://github.com/IsaacLusca/easycar-api-v2"
+            image={easycar}
           />
           <Project
             title="PDF Translate"
             description="Tradutor de arquivos PDF mantendo a formatação original do documento."
             githubUrl="https://github.com/IsaacLusca/PDFTranslate"
+            image={pdfTranslate}
           />
 
           {/* ROW 2 */}
@@ -93,27 +100,17 @@ const Projects = () => {
             title="GerenTAR"
             description="Gerenciador de tarefas com interface limpa e armazenamento local."
             githubUrl="https://github.com/IsaacLusca/GerenTAR"
+            image={gerenTAR}
           />
-          <Project
-            title="DashMERN"
-            description="Dashboard full stack com MERN (MongoDB, Express, React, Node) — em desenvolvimento."
-            githubUrl="https://github.com/IsaacLusca"
-          />
+
           <Project
             title="Termo"
             description="Jogo de adivinhação de palavras inspirado no Termo/Wordle."
             githubUrl="https://github.com/IsaacLusca/Termo-"
+            image={termo}
           />
 
           {/* ROW 3 */}
-          <Project
-            title="Projeto Privado"
-            description="Sistema profissional de grande porte. Código privado, disponível sob consulta."
-          />
-          <Project
-            title="Em Breve"
-            description="Novo projeto sendo desenvolvido em breve."
-          />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
