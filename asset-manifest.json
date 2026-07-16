@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Portifolio/static/css/main.7addfc6a.css",
+    "main.js": "/Portifolio/static/js/main.6e0519e7.js",
+    "static/media/skills-image.png": "/Portifolio/static/media/skills-image.51e40da64df180a7669a.png",
+    "static/media/contact-image.jpeg": "/Portifolio/static/media/contact-image.37fcb61b49d6aa5c40d3.jpeg",
+    "static/media/gerenTAR.png": "/Portifolio/static/media/gerenTAR.88f1c277a5ffa1951b48.png",
+    "static/media/gatocalvocria.jpg": "/Portifolio/static/media/gatocalvocria.fbd4ad549de3bacc26fc.jpg",
+    "static/media/PDFTranslate.png": "/Portifolio/static/media/PDFTranslate.be4a5561391688a03b10.png",
+    "static/media/easycar.png": "/Portifolio/static/media/easycar.1a1fb0623d059dcc12c9.png",
+    "static/media/brush.png": "/Portifolio/static/media/brush.279926ee09251d077c6b.png",
+    "static/media/termo.png": "/Portifolio/static/media/termo.1d8d52986eab9187c0c6.png",
+    "index.html": "/Portifolio/index.html",
+    "static/media/close-icon.svg": "/Portifolio/static/media/close-icon.36a1df96f812b5f4c12f817f90a904c6.svg",
+    "static/media/menu-icon.svg": "/Portifolio/static/media/menu-icon.9cbfc3090b4b0aec575128df8ede3633.svg",
+    "main.7addfc6a.css.map": "/Portifolio/static/css/main.7addfc6a.css.map",
+    "main.6e0519e7.js.map": "/Portifolio/static/js/main.6e0519e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7addfc6a.css",
+    "static/js/main.6e0519e7.js"
+  ]
+}
