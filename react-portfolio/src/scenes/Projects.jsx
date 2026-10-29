@@ -1,5 +1,8 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import taskWorker from "../assets/projectImages/taskworker.png";
+import financeCore from "../assets/projectImages/financecore.png";
+import autoVagas from "../assets/projectImages/autovagas.png";
 import easycar from "../assets/projectImages/easycar.png";
 import pdfTranslate from "../assets/projectImages/PDFTranslate.png";
 import gerenTAR from "../assets/projectImages/gerenTAR.png";
@@ -19,21 +22,36 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title, description, githubUrl, image }) => {
-  const overlayStyles = `absolute h-full w-full flex flex-col justify-center items-center text-center p-16 text-deep-blue transition duration-500 ${
+const Project = ({ title, description, githubUrl, image, isPrivate = false }) => {
+  const overlayStyles = `absolute h-full w-full flex flex-col justify-center items-center text-center p-8 text-deep-blue transition duration-500 ${
     image ? "opacity-0 hover:opacity-90 bg-grey" : "opacity-100 bg-grey"
   }`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
+  const content = (
+    <>
+      <div className={overlayStyles}>
+        <p className="text-2xl font-playfair">{title}</p>
+        <p className="mt-4 text-sm leading-relaxed">{description}</p>
+        {isPrivate && (
+          <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em]">
+            Código privado
+          </p>
+        )}
+      </div>
+      {image && <img src={image} alt={projectTitle} className="w-full h-full object-fill" />}
+    </>
+  );
+
   return (
     <motion.div variants={projectVariant} className="relative max-w-[400px] max-h-[400px] bg-opaque-black overflow-hidden">
-      <a href={githubUrl} target="_blank" rel="noreferrer" className="block w-full h-full">
-        <div className={overlayStyles}>
-          <p className="text-2xl font-playfair">{title}</p>
-          <p className="mt-7">{description}</p>
-        </div>
-        {image && <img src={image} alt={projectTitle} className="w-full h-full object-fill" />}
-      </a>
+      {githubUrl ? (
+        <a href={githubUrl} target="_blank" rel="noreferrer" className="block w-full h-full">
+          {content}
+        </a>
+      ) : (
+        <div className="block w-full h-full cursor-default">{content}</div>
+      )}
     </motion.div>
   );
 };
@@ -83,6 +101,27 @@ const Projects = () => {
             INTERFACES BONITAS
           </div>
           <Project
+            title="TaskWorker"
+            description="Worker Service em .NET 10 com fila persistida no PostgreSQL, retentativas com backoff e idempotência."
+            githubUrl="https://github.com/IsaacLusca/TaskWorker"
+            image={taskWorker}
+          />
+          <Project
+            title="FinanceCore"
+            description="API REST de transações financeiras com JWT, transferências atômicas e concorrência otimista."
+            image={financeCore}
+            isPrivate
+          />
+
+          {/* ROW 2 */}
+          <Project
+            title="auto_vagas"
+            description="Automação de busca e triagem de vagas com Python, PostgreSQL e matching por IA."
+            image={autoVagas}
+            isPrivate
+          />
+
+          <Project
             title="Easycar Api V2"
             description="API REST para sistema de locação de veículos com autenticação e CRUD completo."
             githubUrl="https://github.com/IsaacLusca/easycar-api-v2"
@@ -95,7 +134,7 @@ const Projects = () => {
             image={pdfTranslate}
           />
 
-          {/* ROW 2 */}
+          {/* ROW 3 */}
           <Project
             title="GerenTAR"
             description="Gerenciador de tarefas com interface limpa e armazenamento local."
@@ -110,7 +149,6 @@ const Projects = () => {
             image={termo}
           />
 
-          {/* ROW 3 */}
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
