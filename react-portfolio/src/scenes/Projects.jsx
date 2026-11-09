@@ -109,8 +109,8 @@ const Projects = () => {
           <Project
             title="FinanceCore"
             description="API REST de transações financeiras com JWT, transferências atômicas e concorrência otimista."
+            githubUrl="https://github.com/IsaacLusca/FinanceCore"
             image={financeCore}
-            isPrivate
           />
 
           {/* ROW 2 */}
